@@ -17,7 +17,7 @@ class Executor:
                 logger.info(f"Task {task.id} executed")
             except Exception as e:
                 logger.error(f"Error executing task {task.id}: {str(e)}")
-                raise OrchestrationError(f"Error executing task {task.id}: {str(e)}")
+                raise
 
     def report_progress(self, task_list: List[Task]):
         for task in task_list:
@@ -26,4 +26,3 @@ class Executor:
                 logger.info(f"Task {task.id} progress reported")
             except Exception as e:
                 logger.error(f"Error reporting progress of task {task.id}: {str(e)}")
-                raise OrchestrationError(f"Error reporting progress of task {task.id}: {str(e)}")
